@@ -1,41 +1,21 @@
-#kind: Deployment
-#apiVersion: apps/v1
-#metadata:
- #  name: mrakash
-#spec:
- #  replicas: 2
- #  selector:      # tells the controller which pods to watch/belong to
- #   matchLabels:
- #    app: mrakash
- #  template:
- #     metadata:
- #       labels:
-  #        app: mrakash
-  #    spec:
-  #     containers:
-   #     - name: mrakash
-    #      image: nginx #akash39/pipline-demo:latest
-    #      imagePullPolicy: Always
-    #      ports:
-    #      - containerPort: 80
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: webapp-deployment
-  labels:
-    app: webapp
+  name: mrakash
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      app: webapp
+  selector:      # tells the controller which pods to watch/belong to
+  matchLabels:
+    app: mrakash
   template:
-    metadata:
-      labels:
-        app: webapp
-    spec:
+     metadata:
+       labels:
+         app: mrakash
+     spec:
       containers:
-        - name: webapp-container
-          image: akash39/pipline-demo
+       - name: mrakash
+          image: akash39/pipline-demo:latest
+          imagePullPolicy: Always
           ports:
-            - containerPort: 80
+          - containerPort: 80
+
