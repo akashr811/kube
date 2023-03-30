@@ -14,7 +14,7 @@ spec:
       spec:
        containers:
         - name: mrakash
-          image: akash39/pipline-demo:latest
+          image: nginx #akash39/pipline-demo:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 80
