@@ -1,14 +1,27 @@
-kind: Service                             
-apiVersion: v1
-metadata:
-  name: mrakash
-  labels:
-    app: mrakash
-spec:
-  ports:
-    - port: 8080                               
-      targetPort: 80                    
+#kind: Service                             
+#apiVersion: v1
+#metadata:
+#  name: mrakash
+#  labels:
+#    app: mrakash
+#spec:
+#  ports:
+#    - port: 8080                               
+ #     targetPort: 80                    
       #nodePort: 31200
+ # selector:
+  #  app: mrakash                    
+  #type: LoadBalancer 
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
   selector:
-    app: mrakash                    
-  type: LoadBalancer 
+    app: webapp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
