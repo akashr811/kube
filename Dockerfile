@@ -3,7 +3,7 @@ FROM node:lts-alpine
 # Set the working directory to /app
 WORKDIR /app 
 #  Copy the files into the image at /app
-COPY web /app
+COPY spotify /app
 # Install http-server
 RUN npm install -g http-server
 # Make port 80 available to the world outside this container
